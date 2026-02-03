@@ -1,4 +1,8 @@
+import os
+
 for i in range(11, 301):
-    filename = f"{i}.cpp"
-    with open(filename, "w", encoding="utf-8") as f:
-        pass  # tạo file rỗng
+    old_name = f"{i}.cpp"
+    new_name = f"{i:03}.cpp"   # format 3 chữ số: 001, 011, 300
+
+    if os.path.exists(old_name):
+        os.rename(old_name, new_name)
